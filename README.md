@@ -7,7 +7,7 @@
 1. Clone Repo
 2. `cd public`
 2. Start a local server e.g. `npx http-server --cors -p 8888`
-3. Open https://127.0.0.1:8888 in your prefered browser are tested
+3. Open https://127.0.0.1:8888 in your prefered browser
 
 
 ## Introduction
