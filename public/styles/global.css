@@ -10,6 +10,13 @@
   word-spacing: 0.11rem;
   line-height: 1.5;
   color-scheme: light dark;
+  --icon-invert: 0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --icon-invert: 1;
+  }
 }
 
 html {

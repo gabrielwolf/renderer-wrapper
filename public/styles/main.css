@@ -3,3 +3,12 @@
 @import "./color.css";
 @import "./global.css";
 @import "./helper.css";
+
+
+.header__github-image {
+  position: fixed;
+  top: 1rem;
+  right: 1rem;
+  width: 3rem;
+  filter: invert(var(--icon-invert));
+}
