@@ -1,0 +1,173 @@
+:root {
+  font-family: -apple-system,
+  BlinkMacSystemFont,
+  'Segoe UI',
+  Roboto,
+  Arial,
+  sans-serif;
+  /* The font-size on :root defines our base font size. Elswhere we use rem, relative to this value. */
+  font-size: 16px;
+  word-spacing: 0.11rem;
+  line-height: 1.5;
+  color-scheme: light dark;
+}
+
+html {
+  padding: 0.5rem 1rem 1rem 1rem;
+  color: light-dark(oklch(var(--color-neutral-1)), oklch(var(--color-neutral-8)));
+}
+
+footer {
+  margin-top: 2rem;
+}
+
+section {
+  margin-bottom: 2rem;
+}
+
+button, input, select {
+  background: light-dark(oklch(var(--color-neutral-9)), oklch(var(--color-neutral-4)));
+  cursor: pointer;
+  padding: 0 0.5rem;
+  border-radius: 0.2rem;
+  color: light-dark(oklch(var(--color-neutral-1)), oklch(var(--color-neutral-9)));
+}
+
+button:focus,
+button:hover {
+  color: oklch(var(--color-primary));
+  /* we want to enable the outline on buttons on purpose with .outline */
+  outline: none;
+}
+
+button:disabled,
+input:disabled,
+select:disabled {
+  color: light-dark(oklch(var(--color-neutral-7)), oklch(var(--color-neutral-6)));
+  cursor: default;
+}
+
+input:disabled {
+  background: light-dark(oklch(var(--color-neutral-7)), oklch(var(--color-neutral-6)));
+}
+
+progress {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 1rem;
+  background: oklch(var(--color-neutral-6));
+  cursor: pointer;
+}
+
+/* Firefox */
+::-moz-progress-bar {
+  background: oklch(var(--color-primary));
+}
+
+label {
+  padding-left: 3rem;
+}
+
+/* Chrome, Safari, and newer Edge versions */
+progress::-webkit-progress-value {
+  background: oklch(var(--color-primary));
+}
+
+/* Styling the progress bar value */
+progress::-webkit-progress-bar {
+  background: transparent;
+}
+
+input[type='range'] {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 0.1rem;
+  border-radius: 0;
+}
+
+input[type='range']:not(:disabled) {
+  background: oklch(var(--color-primary));
+}
+
+input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  height: 1rem;
+  width: 1rem;
+  border-radius: 50%;
+  border: 0.1rem solid oklch(var(--color-neutral-6));
+  background: transparent;
+  cursor: ew-resize;
+}
+
+input[type='range']:not(:disabled)::-webkit-slider-thumb {
+  border: 0.1rem solid oklch(var(--color-primary));
+}
+
+input[type='range']::-webkit-slider-runnable-track {
+  -webkit-appearance: none;
+  box-shadow: none;
+  border: none;
+  background: transparent;
+}
+
+input[type=checkbox] {
+  display: inline-block;
+  padding: 0;
+  vertical-align: middle;
+  width: 1rem;
+  height: 1rem;
+  aspect-ratio: 1/1;
+  border-radius: 0.2rem;
+}
+
+input[type=checkbox]:checked {
+  background: oklch(var(--color-primary));
+}
+
+picture img {
+  display: block;
+  width: 100%;
+}
+
+img,
+video,
+canvas {
+  max-width: 100%;
+}
+
+*::-webkit-scrollbar {
+  width: 1rem;
+}
+
+*::-webkit-scrollbar-thumb {
+  background: oklch(var(--color-neutral-5) / 0.5);
+  border-radius: 1rem;
+}
+
+*::-webkit-scrollbar-thumb:hover {
+  border: 2px solid oklch(var(--color-primary));
+  cursor: pointer;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+figure {
+  display: block;
+}
+
+figcaption {
+  display: inline-block;
+  color: light-dark(oklch(var(--color-neutral-1)), oklch(var(--color-tertiary)));
+}
+
+figcaption::before {
+  content: '"';
+}
+
+figcaption::after {
+  content: '"';
+}

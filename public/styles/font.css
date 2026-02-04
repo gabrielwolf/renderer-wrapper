@@ -1,0 +1,25 @@
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  display: inline-block;
+  font-weight: 500;
+}
+
+h1 {
+  font-size: clamp(2rem, 4vw + 1rem, 2.25rem);
+}
+
+h2 {
+  font-size: clamp(1.5rem, 2.5vw + 1rem, 1.75rem);
+  margin-bottom: 1rem;
+}
+
+p {
+  text-indent: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+}

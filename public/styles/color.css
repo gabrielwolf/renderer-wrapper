@@ -1,0 +1,39 @@
+:root {
+  --color-primary: 65.43% 0.3321 15.29;
+}
+
+@media (color-gamut: p3) {
+  :root {
+    --color-primary: 65.49% 0.2952 15.29;
+  }
+}
+
+@media (color-gamut: rec2020) {
+  :root {
+    --color-primary: 65.43% 0.3321 15.29;
+  }
+}
+
+@media (dynamic-range: high) {
+  :root {
+    --color-primary: 60.22% 0.317 15.29;
+  }
+}
+
+:root {
+  /*--color-primary: 69.22% 0.36 15.29; original value*/
+  --color-secondary: 68% 0.2 239.65;
+  --color-tertiary: 68% 0.2 163.41;
+
+  --color-neutral-0: 0% 0 0;
+  --color-neutral-1: 10% 0 0;
+  --color-neutral-2: 20% 0 0;
+  --color-neutral-3: 30% 0 0;
+  --color-neutral-4: 40% 0 0;
+  --color-neutral-5: 50% 0 0;
+  --color-neutral-6: 60% 0 0;
+  --color-neutral-7: 70% 0 0;
+  --color-neutral-8: 80% 0 0;
+  --color-neutral-9: 90% 0 0;
+  --color-neutral-10: 100% 0 0;
+}

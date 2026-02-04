@@ -1,0 +1,83 @@
+# macos
+# General
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+# Thumbnails
+._*
+
+# Files that might appear in the root of a volume
+.DocumentRevisions-V100
+.fseventsd
+.Spotlight-V100
+.TemporaryItems
+.Trashes
+.VolumeIcon.icns
+.com.apple.timemachine.donotpresent
+
+# Directories potentially created on remote AFP share
+.AppleDB
+.AppleDesktop
+Network Trash Folder
+Temporary Items
+.apdisk
+
+# Python
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*/__pycache__/
+**/__pycache__/
+*.py[cod]
+*$py.class
+*.pyc
+.pytest_cache
+
+# C extensions
+*.so
+
+# Translations
+*.mo
+*.pot
+
+# Django stuff:
+*.log
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+flexcrm/static/
+
+# Sensible data
+local.py
+test.csv
+.htpasswd
+certs.*
+
+# PyBuilder
+.pybuilder/
+target/
+
+# Environments
+.env
+.venv
+env/
+venv/
+
+# Dev access protection
+.htaccess
+
+# Static files
+static/assets/
+static/assets/manifest.json
+staticfiles/
+
+# Vite & node_modules
+node_modules/
+pnpm-lock.yaml
+.vite/
+dist/
+
+# PyCharm
+.idea
+

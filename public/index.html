@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>A new binaural renderer for ambisonics.market</title>
+  <link rel="stylesheet" href="./styles/main.css">
+  <script src="./js/mockup.js" type="module"></script>
+</head>
+<body>
+
+<header>
+  <h1>A new binaural renderer for ambisonics.market</h1>
+  <p>Right now the Omnitone renderer is used.</p>
+  <div class="inline-block" style="margin-top: 0.5rem;">
+    <button id="soundfield-rotation-latency-test">Measure sound field rotation latency (1OA/2OA/3OA)</button>
+    (Attention! Loud signal.)
+  </div>
+  <pre id="latency-output" style="margin-top: 0.25rem; white-space: pre-wrap;"></pre>
+</header>
+
+<main>
+  <section>
+    <figure>
+      <h2>First-Order Ambisonics</h2>&nbsp;
+      <figcaption>César Franck</figcaption>&nbsp;
+
+      <div class="inline-block">
+        <button id="1oa-initialize">Initialize</button>
+        <button disabled id="1oa-load">Load</button>
+        <button disabled id="1oa-play">Play</button>
+        <label for="1oa-position" hidden>Position</label>
+        <input disabled id="1oa-position" size="3" type="text" value="0" hidden>
+        <button disabled id="1oa-stop">Stop</button>
+        <label for="1oa-render-mode" class="no-padding">Render mode:</label>
+        <select disabled id="1oa-render-mode" name="render-mode">
+          <option value="ambisonic">ambisonic (binaural)</option>
+          <option value="bypass">bypass (passtrough)</option>
+          <option value="off">off (save compute)</option>
+        </select>
+        <span class="buffer-indicators" id="1oa-buffer-indicators" aria-label="Buffering progress">Buffering progress:
+          <span class="buffer-indicator" data-example="1oa" data-buffer-index="0">0%</span>
+        </span>
+      </div>
+
+      <br>
+
+      <label for="1oa-progress">Progress</label>
+      <div class="progress-hit">
+        <progress id="1oa-progress" value="0" max="1"></progress>
+      </div>
+      <div class="flexbox">
+        <span id="1oa-current-time">0:00</span>
+        <span id="1oa-duration">0:00</span>
+      </div>
+
+      <label for="1oa-gain">Gain</label>
+      <input disabled id="1oa-gain" max="0" min="-60" step="1" type="range" value="-10">
+      <div id="1oa-gain-label" class="text-right db">-10</div>
+
+      <label for="1oa-azimuth">Azimuth</label>
+      <input disabled id="1oa-azimuth" max="180" min="-180" step="0.01" type="range" value="0">
+      <div id="1oa-azimuth-label" class="text-center degree">0</div>
+
+      <label for="1oa-elevation">Elevation</label>
+      <input disabled id="1oa-elevation" max="90" min="-90" step="0.01" type="range" value="0">
+      <div id="1oa-elevation-label" class="text-center degree">0</div>
+    </figure>
+  </section>
+
+  <section>
+    <figure>
+      <h2>Second-Order Ambisonics</h2>&nbsp;
+      <figcaption>Clock</figcaption>&nbsp;
+
+      <div class="inline-block">
+        <button id="2oa-initialize">Initialize</button>
+        <button disabled id="2oa-load">Load</button>
+        <button disabled id="2oa-play">Play</button>
+        <label for="2oa-position" hidden>Position</label>
+        <input disabled id="2oa-position" size="3" type="text" value="0" hidden>
+        <button disabled id="2oa-stop">Stop</button>
+        <label for="2oa-render-mode" class="no-padding">Render mode:</label>
+        <select disabled id="2oa-render-mode" name="render-mode">
+          <option value="ambisonic">ambisonic (binaural)</option>
+          <option value="bypass">bypass (passtrough)</option>
+          <option value="off">off (save compute)</option>
+        </select>
+        <span class="buffer-indicators" id="2oa-buffer-indicators" aria-label="Buffering progress">Buffering progress:
+          <span class="buffer-indicator" data-example="2oa" data-buffer-index="0">0%</span>
+          <span class="buffer-indicator" data-example="2oa" data-buffer-index="1">0%</span>
+        </span>
+      </div>
+
+      <br>
+
+      <label for="2oa-progress">Progress</label>
+      <div class="progress-hit">
+        <progress id="2oa-progress" value="0"></progress>
+      </div>
+      <div class="flexbox">
+        <span id="2oa-current-time">0:00</span>
+        <span id="2oa-duration">0:00</span>
+      </div>
+
+      <label for="2oa-gain">Gain</label>
+      <input disabled id="2oa-gain" max="0" min="-60" step="1" type="range" value="-10">
+      <div id="2oa-gain-label" class="text-right db">-10</div>
+
+      <label for="2oa-azimuth">Azimuth</label>
+      <input disabled id="2oa-azimuth" max="180" min="-180" step="0.01" type="range" value="0">
+      <div id="2oa-azimuth-label" class="text-center degree">0</div>
+
+      <label for="2oa-elevation">Elevation</label>
+      <input disabled id="2oa-elevation" max="90" min="-90" step="0.01" type="range" value="0">
+      <div id="2oa-elevation-label" class="text-center degree">0</div>
+    </figure>
+  </section>
+
+  <section>
+    <figure>
+      <h2>Third-Order Ambisonics</h2>&nbsp;
+      <figcaption>Matt Larocca - Little Martha</figcaption>&nbsp;
+
+      <div class="inline-block">
+        <button id="3oa-initialize">Initialize</button>
+        <button disabled id="3oa-load">Load</button>
+        <button disabled id="3oa-play">Play</button>
+        <label for="3oa-position" hidden>Position</label>
+        <input disabled id="3oa-position" size="3" type="text" value="0" hidden>
+        <button disabled id="3oa-stop">Stop</button>
+        <label for="3oa-render-mode" class="no-padding">Render mode:</label>
+        <select disabled id="3oa-render-mode" name="render-mode">
+          <option value="ambisonic">ambisonic (binaural)</option>
+          <option value="bypass">bypass (passtrough)</option>
+          <option value="off">off (save compute)</option>
+        </select>
+        <span class="buffer-indicators" id="3oa-buffer-indicators" aria-label="Buffering progress">Buffering progress:
+          <span class="buffer-indicator" data-example="3oa" data-buffer-index="0">0%</span>
+          <span class="buffer-indicator" data-example="3oa" data-buffer-index="1">0%</span>
+          <span class="buffer-indicator" data-example="3oa" data-buffer-index="2">0%</span>
+        </span>
+      </div>
+
+      <br>
+
+      <label for="3oa-progress">Progress</label>
+      <div class="progress-hit">
+        <progress id="3oa-progress" value="0"></progress>
+      </div>
+      <div class="flexbox">
+        <span id="3oa-current-time">0:00</span>
+        <span id="3oa-duration">0:00</span>
+      </div>
+
+      <label for="3oa-gain">Gain</label>
+      <input disabled id="3oa-gain" max="0" min="-60" step="1" type="range" value="-10">
+      <div id="3oa-gain-label" class="text-right db">-10</div>
+
+      <label for="3oa-azimuth">Azimuth</label>
+      <input disabled id="3oa-azimuth" max="180" min="-180" step="0.01" type="range" value="0">
+      <div id="3oa-azimuth-label" class="text-center degree">0</div>
+
+      <label for="3oa-elevation">Elevation</label>
+      <input disabled id="3oa-elevation" max="90" min="-90" step="0.01" type="range" value="0">
+      <div id="3oa-elevation-label" class="text-center degree">0</div>
+    </figure>
+  </section>
+</main>
+
+<footer>
+  Made with 🎧 in Berlin
+</footer>
+
+</body>
+</html>

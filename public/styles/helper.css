@@ -1,0 +1,53 @@
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.degree::after {
+  content: "°";
+}
+
+.db::after {
+  content: "dB";
+}
+
+.flexbox {
+  display: flex;
+  align-content: space-between;
+}
+
+.flexbox > *:first-child {
+  margin: 0 auto 0 0;
+}
+
+.flexbox > *:last-child {
+  margin: 0 0 0 auto;
+}
+
+.inline-block {
+  display: inline-block;
+  line-height: 1.88rem;
+}
+
+.inline-block * {
+  line-height: 1.5;
+}
+
+/* Make thin progress bars easier to click without making them look thicker */
+.progress-hit {
+  display: flex;
+  align-items: center;
+  padding-block: 0.45rem;
+  cursor: pointer;
+}
+
+.progress-hit progress {
+  height: 0.1rem;
+}
+
+.no-padding {
+  padding: 0;
+}
